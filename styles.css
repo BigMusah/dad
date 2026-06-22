@@ -1,63 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#4facfe,#00f2fe);
-    padding:30px;
-}
-
-.container{
-    max-width:900px;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(15px);
-    border-radius:25px;
-    padding:40px;
-    text-align:center;
-    color:white;
-    box-shadow:0 8px 30px rgba(0,0,0,0.2);
-}
-
-.photo-section img{
-    width:250px;
-    height:250px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid white;
-    margin-bottom:25px;
-    box-shadow:0 0 25px rgba(255,255,255,0.5);
-}
-
-h1{
-    font-size:3rem;
-    margin-bottom:20px;
-}
-
-h2{
-    margin-top:25px;
-    font-size:2rem;
-}
-
-p{
-    font-size:1.1rem;
-    line-height:1.8;
-    margin-bottom:15px;
-}
-
-.signature{
-    margin-top:20px;
-    font-weight:bold;
-    font-size:1.2rem;
-}
-body{
-    margin:0;
     font-family:'Poppins',sans-serif;
     background:linear-gradient(
         135deg,
@@ -67,100 +21,27 @@ body{
     );
     color:white;
     overflow-x:hidden;
-}
-
-.hero{
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:50px 20px;
+    padding:20px;
 }
 
-.dad-card{
-    max-width:850px;
-    text-align:center;
-    padding:40px;
-    background:rgba(255,255,255,0.1);
-    backdrop-filter:blur(20px);
-    border-radius:30px;
-    border:1px solid rgba(255,255,255,0.2);
-    animation:fadeUp 1.5s ease;
-}
+/* Floating Hearts */
 
-.dad-photo{
-    width:280px;
-    height:280px;
-    border-radius:50%;
-    object-fit:cover;
-    border:8px solid white;
-    margin-bottom:20px;
-    box-shadow:0 0 40px rgba(255,255,255,0.4);
-    transition:.5s;
-}
-
-.dad-photo:hover{
-    transform:scale(1.05);
-}
-
-h1{
-    font-size:4rem;
-}
-
-.gallery{
-    padding:80px 20px;
-    text-align:center;
-}
-
-.gallery h2{
-    font-size:2.5rem;
-    margin-bottom:40px;
-}
-
-.slider{
-    max-width:1000px;
-    margin:auto;
-    overflow:hidden;
-    border-radius:25px;
-}
-
-.slides{
-    display:none;
-}
-
-.slides img{
+.floating-hearts{
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
-    height:600px;
-    object-fit:cover;
-    border-radius:25px;
+    height:100%;
+    pointer-events:none;
+    z-index:0;
 }
-
-.fade{
-    animation:fade 1.5s;
-}
-
-@keyframes fade{
-    from{opacity:.4}
-    to{opacity:1}
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-
 
 .floating-hearts span{
     position:absolute;
+    bottom:-100px;
     font-size:30px;
-    animation:float 10s linear infinite;
+    animation:float 12s linear infinite;
 }
 
 .floating-hearts span:nth-child(1){
@@ -190,7 +71,7 @@ h1{
 
 @keyframes float{
     from{
-        transform:translateY(100vh);
+        transform:translateY(0);
         opacity:0;
     }
 
@@ -199,7 +80,265 @@ h1{
     }
 
     to{
-        transform:translateY(-100px);
+        transform:translateY(-120vh);
         opacity:0;
     }
 }
+
+/* Main Card */
+
+.container{
+    max-width:1000px;
+    margin:0 auto 60px;
+    padding:40px;
+    text-align:center;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:30px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.25);
+
+    position:relative;
+    z-index:2;
+
+    animation:fadeUp 1s ease;
+}
+
+/* Main Photo */
+
+.photo-section img{
+    width:260px;
+    height:260px;
+    object-fit:cover;
+    border-radius:50%;
+    border:8px solid rgba(255,255,255,0.8);
+
+    margin-bottom:25px;
+
+    box-shadow:
+        0 0 40px rgba(255,255,255,0.3);
+
+    transition:.4s;
+}
+
+.photo-section img:hover{
+    transform:scale(1.05);
+}
+
+/* Headings */
+
+h1{
+    font-size:3.5rem;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+h2{
+    margin-top:25px;
+    font-size:2rem;
+    color:#facc15;
+}
+
+p{
+    font-size:1.1rem;
+    line-height:1.9;
+    margin-bottom:18px;
+    opacity:0.95;
+}
+
+.signature{
+    margin-top:20px;
+    font-size:1.2rem;
+    font-weight:600;
+}
+
+/* Hero Section */
+
+.hero{
+    display:flex;
+    justify-content:center;
+    padding:30px 0 80px;
+}
+
+.dad-card{
+    width:100%;
+    max-width:1000px;
+
+    padding:40px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.25);
+
+    animation:fadeUp 1.5s ease;
+}
+
+.dad-photo{
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    border-radius:50%;
+    border:8px solid white;
+
+    margin-bottom:25px;
+
+    transition:.4s;
+
+    box-shadow:
+        0 0 40px rgba(255,255,255,0.3);
+}
+
+.dad-photo:hover{
+    transform:scale(1.05);
+}
+
+/* Gallery */
+
+.gallery{
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+    padding:40px 0 80px;
+}
+
+.gallery h2{
+    margin-bottom:35px;
+}
+
+/* Slider */
+
+.slider{
+    overflow:hidden;
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(20px);
+
+    padding:15px;
+}
+
+.slides{
+    display:none;
+}
+
+.slides img{
+    width:100%;
+    height:650px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+/* Animation */
+
+.fade{
+    animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    body{
+        padding:10px;
+    }
+
+    .container,
+    .dad-card{
+        padding:25px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.4rem;
+    }
+
+    p{
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+    .photo-section img,
+    .dad-photo{
+        width:180px;
+        height:180px;
+    }
+
+    .slides img{
+        height:320px;
+    }
+}
+
+@media(max-width:480px){
+
+    h1{
+        font-size:1.7rem;
+    }
+
+    h2{
+        font-size:1.2rem;
+    }
+
+    p{
+        font-size:.95rem;
+    }
+
+    .photo-section img,
+    .dad-photo{
+        width:150px;
+        height:150px;
+    }
+
+    .slides img{
+        height:220px;
+    }
+
+    .container,
+    .dad-card{
+        padding:18px;
+        border-radius:20px;
+    }
+
+    .floating-hearts span{
+        font-size:20px;
+    }
+}
+

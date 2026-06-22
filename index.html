@@ -11,7 +11,7 @@
     <div class="container">
 
         <div class="photo-section">
-            <!-- Replace dad.jpg with your father's picture -->
+            
             <img src="dad1.jpeg" alt="Our Beloved Father">
         </div>
 
@@ -90,32 +90,55 @@
 
 <section class="gallery">
 
-    <h2>Our Beautiful Memories Together 📸</h2>
+    <h2>We Pray For Beautiful Memories Together 📸</h2>
 
     <div class="slider">
 
         <div class="slides fade">
-            <img src="images/photo1.jpg">
+            <img src="musah.jpeg" alt="Dad and Us">
         </div>
 
         <div class="slides fade">
-            <img src="images/photo2.jpg">
+            <img src="musah2.jpeg" alt="Dad and Us">
         </div>
 
         <div class="slides fade">
-            <img src="images/photo3.jpg">
+            <img src="musah3.jpeg" alt="Dad and Us">
         </div>
 
         <div class="slides fade">
-            <img src="images/photo4.jpg">
+            <img src="musah4.jpeg" alt="Dad and Us">
         </div>
 
         <div class="slides fade">
-            <img src="images/photo5.jpg">
+            <img src="musah5.jpeg" alt="Dad and Us">
         </div>
 
     </div>
 
 </section>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slides");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+
+    setTimeout(showSlides, 3000);
+}
+</script>
 </body>
 </html>
